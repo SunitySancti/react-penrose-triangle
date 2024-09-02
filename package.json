@@ -1,0 +1,43 @@
+{
+  "name": "react-penrose-triangle",
+  "version": "1.0.2",
+  "description": "Customizable and controllable TS component powered by ThreeJS and MobX.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [ "dist/**/*" ],
+  "scripts": {
+    "build": "tsc",
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "mobx-react-lite": "^4.0.7",
+    "three": "^0.168.0",
+    "@react-three/drei": "^9.111.5",
+    "@react-three/fiber": "^8.17.6"
+  },
+  "devDependencies": {
+    "tsc": "^2.0.4",
+    "typescript": "^5.5.4",
+    "@types/three": "^0.168.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SunitySancti/react-penrose-triangle.git"
+  },
+  "keywords": [
+    "react",
+    "penrose",
+    "triangle",
+    "impossible",
+    "geometry",
+    "optical",
+    "illusion"
+  ],
+  "author": "Alex Sunity",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/SunitySancti/react-penrose-triangle/issues"
+  },
+  "homepage": "https://github.com/SunitySancti/react-penrose-triangle#readme"
+}
