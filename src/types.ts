@@ -1,9 +1,9 @@
-import { usePenroseTriangle } from './store'
-import { useCubeGeometry } from './util/hooks'
+import { usePenroseTriangle } from './store/index.js'
+import { useCubeGeometry } from './util/hooks.js'
 
-import GeometryStore from './store/GeometryStore'
-import MaterialStore from './store/MaterialStore'
-import LightStore from './store/LightStore'
+import GeometryStore from './store/GeometryStore.js'
+import MaterialStore from './store/MaterialStore.js'
+import LightStore from './store/LightStore.js'
 
 import type { Vector2 } from 'three'
 import { RefObject } from 'react'
@@ -23,11 +23,6 @@ type Properties<T> = {
 
 type GroupedPoints = Vector2[][];
 type GeometryLike = ReturnType<typeof useCubeGeometry>;
-export type NumberLike = number | string;
-
-export interface Vertices {
-    [vertex: string]: Vector2
-}
 
 export interface CubesDataParams {
     cubesInSide: number,
@@ -47,6 +42,7 @@ export interface TriangleRotationParams {
 
 // STORES //
 
+export type NumberLike = number | string;
 type Config<Store> = Pick<Store, Properties<Store>>;
 type Actions<Store> = Omit<Store, keyof Config<Store>>
 export type HookReturn = ReturnType<typeof usePenroseTriangle>

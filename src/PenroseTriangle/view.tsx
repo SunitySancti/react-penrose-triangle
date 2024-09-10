@@ -1,9 +1,9 @@
-import Cube from '../Cube'
+import Cube from '../Cube/index.js'
 
-import { degToRad } from '../util'
-import { triangleShiftY } from '../util/magicNumbers'
+import { degToRad } from '../util/index.js'
+import { triangleShiftY } from '../util/magicNumbers.js'
 
-import type { PenroseTriangleViewProps } from '../types'
+import type { PenroseTriangleViewProps } from '../types.js'
 
 
 const PenroseTriangleView = ({
@@ -31,8 +31,6 @@ const PenroseTriangleView = ({
                         isLast={ idxInTotal === totalLength - 1 }
                         isInverted={ isInverted }
                         color={ color }
-                        // material='standard'
-                        // isRotating
                     />
                 )
             }))}

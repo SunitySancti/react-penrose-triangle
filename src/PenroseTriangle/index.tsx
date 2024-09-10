@@ -4,19 +4,19 @@ import { Canvas } from '@react-three/fiber'
 import { OrthographicCamera } from '@react-three/drei'
 import { observer } from 'mobx-react-lite'
 
-import PenroseTriangleView from './view'
+import PenroseTriangleView from './view.js'
 import { useCubesData,
          useElementSizes,
-         useTriangleRotation } from '../util/hooks'
-import { zoomCoefficient } from '../util/magicNumbers'
-import { defaultValues } from '../store'
+         useTriangleRotation } from '../util/hooks.js'
+import { zoomCoefficient } from '../util/magicNumbers.js'
+import { defaultValues } from '../store/index.js'
 
 import { PenroseTriangleProps,
          SceneProps,
          PenroseTriangleModelProps,
          GeometryConfig,
          MaterialConfig,
-         LightConfig } from '../types'
+         LightConfig } from '../types.js'
 
 
 const PenroseTriangle = memo(({

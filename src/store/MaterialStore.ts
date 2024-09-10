@@ -1,6 +1,6 @@
 import { makeAutoObservable } from 'mobx'
 
-import type { MaterialInititalValues } from '../types'
+import type { MaterialInititalValues } from '../types.js'
 
 
 export const defaultMaterial = Object.freeze({

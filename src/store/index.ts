@@ -1,17 +1,16 @@
-import { useRef,
-         useMemo,
+import { useMemo,
          useState } from 'react'
 
-import GeometryStore from './GeometryStore'
-import MaterialStore from './MaterialStore'
-import LightStore from './LightStore'
+import GeometryStore from './GeometryStore.js'
+import MaterialStore from './MaterialStore.js'
+import LightStore from './LightStore.js'
 
-import { defaultGeometry } from './GeometryStore'
-import { defaultMaterial } from './MaterialStore'
-import { defaultLight } from './LightStore'
+import { defaultGeometry } from './GeometryStore.js'
+import { defaultMaterial } from './MaterialStore.js'
+import { defaultLight } from './LightStore.js'
 
 import type { PenroseTriangleProps,
-              InititialConfig } from '../types'
+              InititialConfig } from '../types.js'
 
 export const defaultValues = {
     geometry: defaultGeometry,

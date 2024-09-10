@@ -2,10 +2,10 @@ import { makeAutoObservable } from 'mobx'
 
 import { numberify,
          boolify,
-         roundAndNarrow } from '../util'
+         roundAndNarrow } from '../util/index.js'
 
 import type { NumberLike,
-              GeometryInititalValues } from '../types'
+              GeometryInititalValues } from '../types.js'
 
 
 export const defaultGeometry = Object.freeze({

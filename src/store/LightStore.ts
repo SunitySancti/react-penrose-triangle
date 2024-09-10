@@ -1,11 +1,11 @@
 import { makeAutoObservable } from 'mobx'
 
 import { numberify,
-         roundAndNarrow } from '../util'
-import GeometryStore from './GeometryStore';
+         roundAndNarrow } from '../util/index.js'
+import GeometryStore from './GeometryStore.js';
 
 import type { NumberLike,
-              LightInititalValues } from '../types'
+              LightInititalValues } from '../types.js'
 
 
 export const defaultLight = Object.freeze({

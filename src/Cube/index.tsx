@@ -1,13 +1,13 @@
 import { useRef } from 'react'
 
-import CubeView from './view'
+import CubeView from './view.js'
 
 import { useCubeGeometry,
-         useCubeRotation } from '../util/hooks'
-import { cubeRotationY } from '../util/magicNumbers'
+         useCubeRotation } from '../util/hooks.js'
+import { cubeRotationY } from '../util/magicNumbers.js'
 
 import type { Group } from 'three'
-import type { CubeModelProps } from '../types'
+import type { CubeModelProps } from '../types.js'
 
 
 const Cube = ({

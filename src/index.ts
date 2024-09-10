@@ -18,9 +18,9 @@
  */
 
 import { observer } from 'mobx-react-lite'
-import PenroseTriangle from './PenroseTriangle'
+import PenroseTriangle from './PenroseTriangle/index.js'
 import { usePenroseTriangle,
-         defaultValues } from './store'
+         defaultValues } from './store/index.js'
 
 export {
     observer,

@@ -1,6 +1,6 @@
 import { Vector2 } from 'three'
 
-import { cubeSizeCoefficient } from './magicNumbers'
+import { cubeSizeCoefficient } from './magicNumbers.js'
 
 
 export const getPointsBetween = (

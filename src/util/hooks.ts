@@ -8,13 +8,12 @@ import { useFrame } from '@react-three/fiber'
 
 import { getPointsBetween,
          getCubeSize,
-         getSideLength } from './index'
+         getSideLength } from './index.js'
 
 import type { RefObject } from 'react'
 import type { Group } from 'three'
-import type { Vertices,
-              CubesDataParams,
-              TriangleRotationParams } from '../types'
+import type { CubesDataParams,
+              TriangleRotationParams } from '../types.js'
 
 
 export const useCubesData = ({
@@ -27,12 +26,9 @@ export const useCubesData = ({
     const halfSideLength = diameter * Math.sqrt(3) / 4;
     const halfHeight = diameter * 3 / 8;
 
-    const vertices: Vertices = {
-        A: new Vector2(0, halfHeight),
-        B: new Vector2(-halfSideLength, -halfHeight),
-        C: new Vector2(halfSideLength, -halfHeight),
-    }
-    const { A, B, C } = vertices;
+    const A = new Vector2(0, halfHeight);
+    const B = new Vector2(-halfSideLength, -halfHeight);
+    const C = new Vector2(halfSideLength, -halfHeight);
     const n = cubesInSide - 1;
 
     const cubeCenters = useMemo(() => isInverted
@@ -46,7 +42,6 @@ export const useCubesData = ({
             [ B, ...getPointsBetween(B, C, n) ],
             [ C, ...getPointsBetween(C, A, n) ],
     ],[ cubesInSide,
-        gapRatio,
         diameter,
         isInverted
     ]);
@@ -79,7 +74,7 @@ export const useCubeGeometry = (size: number, shouldSlice = false, isInverted = 
             const mainMeshIndices: number[] = [];
     
             sliceMeshTrianglesIndices.forEach(idx => {
-                sliceMeshIndices.push(...triangles[idx])
+                sliceMeshIndices.push(...triangles[idx] || [])
             });
             mainMeshTriangles.forEach(triangle => {
                 mainMeshIndices.push(...triangle)
@@ -178,7 +173,9 @@ export const useElementSizes = (ref?: RefObject<HTMLElement> | undefined) => {
                 return () => {
                     resizeObserver.disconnect();
                 }
-            } 
+            } else {
+                return () => {}
+            }
         } else {
             const setWindowSizes = () => {
                 setWidth(window.innerWidth);
@@ -193,7 +190,6 @@ export const useElementSizes = (ref?: RefObject<HTMLElement> | undefined) => {
                 window.removeEventListener('resize', setWindowSizes)
             }
         }
-        
     },[ ref, ref?.current ]);
 
     return { width, height, scrollWidth, scrollHeight }
